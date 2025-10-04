@@ -10,20 +10,25 @@ struct Node {
 
 void output(Node *);
 Node* createLinkedList(int size);
-//going to start prototypes here 
+
+// start prototypes here 
 Node* createNode(float value);
 void insertAtHead(Node*& head, float value); // pointer reference
 
 
- head = createLinkedList(SIZE) ; 
+
 
 int main() {
     Node *head = nullptr;
     int count = 0;
-    
+
  // create a linked list of size SIZE with random numbers 0-99
-    Node* createLinkedList(int size) {
-        Node* head = nullptr; //empty
+    head = createLinkedList(SIZE);
+
+     output(head);
+
+}
+        Node* head = nullptr; 
    
     /*for (int i = 0; i < SIZE; i++) {
         int tmp_val = rand() % 100;
@@ -40,10 +45,11 @@ int main() {
             newVal->value = tmp_val;
             head = newVal;
         }
-   */ }
+            
+   */ 
     
-    output(head);
-    }
+   
+    
     // deleting a node
     Node * current = head;
     cout << "Which node to delete? " << endl;
