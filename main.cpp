@@ -14,6 +14,8 @@ Node* createLinkedList(int size);
 Node* createNode(float value);
 void insertAtHead(Node*& head, float value); // pointer reference
 void deleteNode(Node*& head, int position);
+void insertAfter(Node*& head, int position);
+void deleteList(Node*& head, int position);
 
 
 
@@ -27,14 +29,15 @@ int main() {
 
    
     // deleting a node
-    Node* current = head;
+   Node* current = head;
     cout << "Which node to delete? " << endl;
     output(head);
     int entry;
     cout << "Choice --> ";
     cin >> entry;
-
-
+    deleteNode(head, entry);
+    output(head);
+    
     // traverse that many times and delete that node
     current = head;
     Node *prev = head;
