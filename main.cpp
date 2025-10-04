@@ -84,15 +84,15 @@ int main() {
     output(head);
 
     // deleting the linked list
-    current = head;
+   current = head;
     while (current) {
         head = current->next;
         delete current;
         current = head;
     }
     head = nullptr;
-    output(head);
-
+     output(head);
+    
     return 0;
 }
 
@@ -110,6 +110,11 @@ void output(Node * hd) {
     cout << endl;
 }
 
+//Node *createLinkedList(int size)
+
+    //return nullptr;
+//}
+
 void deleteNode(Node*& head, int position) {
     Node *current = head;
     Node *prev = head;
@@ -126,4 +131,41 @@ void deleteNode(Node*& head, int position) {
 
 }
 
-void insertAfter(Node*&)
+void insertAfter(Node*& head, int position) {
+    Node *current = head;
+    Node *prev = head;
+
+    for(int i = 0; i < (position); i++) {
+        if(i == 0) {
+        current = current -> next;
+          prev = prev->next;
+        }
+    Node * newnode = new Node;
+    newnode->value = 10000;
+    newnode->next = current;
+    prev->next = newnode;
+    output(head);
+    }
+}
+
+Node* createLinkedList(int size) {
+    Node* head = nullptr;
+    for(int i = 0; i < size; i++) {
+        int temp_val = rand() % 100;
+        Node *newVal = new Node;
+        
+        // adds node at head
+        if (!head) { // if this is the first node, it's the new head
+            head = newVal;
+            newVal->next = nullptr;
+            newVal->value = temp_val;
+        }
+        else { // its a second or subsequent node; place at the head
+            newVal->next = head;
+            newVal->value = temp_val;
+            head = newVal;
+        }
+    } 
+    output(head);
+}
+      
