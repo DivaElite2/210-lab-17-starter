@@ -9,6 +9,10 @@ struct Node {
 };
 
 void output(Node *);
+//going to start prototypes here 
+Node* createNode(float value);
+void insertAtHead(Node*& head, float value); // pointer reference
+Node* createLinkedList(int size);
 
 int main() {
     Node *head = nullptr;
